@@ -34,6 +34,7 @@
                 CurrentTarget:event.CurrentTarget,
             },
             ]);
+            
         };
         const callinner=(event)=>{
             console.table([{
@@ -42,10 +43,17 @@
                 CurrentTarget:event.CurrentTarget,
             },
             ]);
-        };
-        document.getElementById("outer").addEventListener("click",callOuter);
+            //event.stopPropagation();
+                };
+<!-- 
+    // capturing phase
+                document.getElementById("outer").addEventListener("click",callOuter);
         document.getElementById("middle").addEventListener("click",callMiddle);
-        document.getElementById("middle").addEventListener("click",callinner);
+        document.getElementById("middle").addEventListener("click",callinner); -->
+     // bubbling phase  
+        document.getElementById("outer").addEventListener("click",callOuter,true);
+        document.getElementById("middle").addEventListener("click",callMiddle , true);
+        document.getElementById("middle").addEventListener("click",callinner, true);
         
 
     </script>
