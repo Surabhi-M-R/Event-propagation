@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div id="outer">
+                    Outer
+            <div id="middle">
+                    Middle
+                <div id="inner">
+                    Inner
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const callOuter=(event)=>{
+            console.table([{
+                Description : " Im a outer one",
+                Target:event.target,
+                CurrentTarget:event.CurrentTarget,
+            },
+            ]);
+        };
+        const callMiddle=(event)=>{
+            console.table([{
+                Description : " Im a middle  one",
+                Target:event.target,
+                CurrentTarget:event.CurrentTarget,
+            },
+            ]);
+        };
+        const callinner=(event)=>{
+            console.table([{
+                Description : " Im a inner  one",
+                Target:event.target,
+                CurrentTarget:event.CurrentTarget,
+            },
+            ]);
+        };
+        document.getElementById("outer").addEventListener("click",callOuter);
+        document.getElementById("middle").addEventListener("click",callMiddle);
+        document.getElementById("middle").addEventListener("click",callinner);
+        
+
+    </script>
+</body>
+</html>
