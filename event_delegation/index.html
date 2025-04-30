@@ -15,8 +15,19 @@
         <li>Javascript</li>
         <li>cpp</li>
     </ul>
+    <p id="listvalue">
+
+    </p>
 
 
-    <script src="script.js"></script>
+    <script >
+
+       const getListDetails=(event)=>{
+        console.log(event.target);
+        document.getElementById("listvalue").innerHTML=event.target.textcontent;
+       };
+        document.getElementById("myList").addEventListener("click",getListDetails);
+
+    </script>
 </body>
 </html>
